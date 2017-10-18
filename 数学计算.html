@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+<style type="text/css">
+table {
+    width: 800px;
+    height: 300px;
+    border-collapse: collapse;
+}
+table th {
+    border: 1px solid #069;
+}
+body {
+    text-align: center;
+}
+h1 {
+    font-family: "微软雅黑", Verdana, sans-serif, "宋体";
+    color: #666;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+</style>
+
+</head>
+<body>
+	<script>
+			//1*2*3....*100
+			var x = 1;
+			var i;
+			for (i=1; i<=100; i++) {
+			    x= x*i;
+			}
+			console.log(x);
+			//1+2....+100
+			var x = 0;
+			var i;
+			for (i=1; i<=100; i++) {
+			    x= x+i;
+			}
+			console.log(x);
+
+			//100内奇数之和
+			var x = 0;
+			var n = 99;
+			while (n > 0) {
+			    x = x + n;
+			    n = n - 2;
+			}
+			
+			console.log(x)
+
+			
+			var num = 0;
+			for(var i=0;i <100;i ++){
+				if(i%2 == 1){
+					num += i;
+				}
+			}			
+			console.log("奇数总和为" + num);
+	
+
+			//100以内偶数之和
+			var x = 0;
+			var n = 100;
+			while (n > 0) {
+			    x = x + n;
+			    n = n - 2;
+			}
+			console.log(x)
+
+			var num = 0;
+			for(var i=0;i <=100;i ++){
+				if(i%2 == 0){
+					num += i;
+				}
+			}
+			console.log("偶数总和为" + num);
+
+
+			//乘法表
+		    document.write("<table>");
+		    var str = "js九九乘法表";
+		    document.write("<h1>" + str + "</h1>");
+		    for ( var x = 1; x <= 9; x++) {
+		        document.write("<tr>");
+		        for ( var y = 1; y <= x; y++) {
+		            document.write("<th>" + x + "*" + y + "=" + (x * y) + "</th>");
+		        }
+		        document.write("</tr>");
+		    }
+		    document.write("</table>")
+
+
+
+		    //去掉数组中的字符串
+		    var arr=["aoo",1,2,"444"];		   	
+		    for (var i=0; i<arr.length;i++) {
+		    	if(typeof arr[i]==="string"){
+		    		arr.splice(i,1)
+		    	};
+		    	  
+		    }
+		    console.log(arr)
+		 	
+		 	//数组去重
+		 	var ary=[1,2,3,3,2,3,4,5];
+			for(var i=0;i<ary.length;i++){
+			  for(var j=i+1;j<ary.length;j++){
+			    if(ary[i]===ary[j]){
+			      ary.splice(i,1);
+			      i--;
+			    }
+			  }
+			}
+			console.log(ary);
+
+			//排序
+			var a=[2,3,6,54,86,21,35,1,65,4,1000];
+        		function action(a){
+        			if(Array.isArray(a)){
+						for(var i= 0 ;i<a.length;i++){    //第一层循环
+				            	// for(var j=0;j<a.length-i-1;j++){    //第二层循环
+				             //    	if(a[j]>a[j+1]){  
+				             //       	 var tem =a[j];//交换位置
+				             //        	a[j]=a[j+1];
+				             //        	a[j+1]=tem;
+			                 	 for(var j=i;j<a.length-1;j++){
+				                   if(a[i]>a[j+1]){  
+				                   	 var tem =a[i];//交换位置
+				                    	a[i]=a[j+1];
+				                    	a[j+1]=tem;
+				                }
+				            }
+				        }
+				        	return a
+				        }else{
+				        	console.log('the arg must be Array')
+				        }
+				    }
+				   var result=action(a)
+				   console.log(result)
+
+		  	
+		   
+		    
+		    
+
+	</script>
+</body>
+</html>
